@@ -1,4 +1,3 @@
-from os.path import join
 from time import time
 
 def sum_all_digits(numbers):
