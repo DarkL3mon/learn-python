@@ -14,3 +14,11 @@ print(forLoop.lookup_for_digit(1, 102030))  # True
 print(forLoop.lookup_for_digit(6, 102030))  # False
 print(forLoop.lookup_for_digit(1, "102030"))  # True
 print(forLoop.lookup_for_digit(6, "102030"))  # False
+
+# Lookup for digit in a list of numbers and count occurrences
+print(forLoop.count_digit_occurrences(3, [1, 2, 3, 4, 5]))  # 1
+print(forLoop.count_digit_occurrences(6, [1, 2, 3, 4, 5]))  # 0
+print(forLoop.count_digit_occurrences(0, 102030))  # 3
+print(forLoop.count_digit_occurrences(6, 102030))  # 0
+print(forLoop.count_digit_occurrences(0, "102030"))  # 3
+print(forLoop.count_digit_occurrences(6, "102030"))  # 0
