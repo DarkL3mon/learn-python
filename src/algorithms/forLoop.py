@@ -13,4 +13,4 @@ def sum_timestamp_digits():
     # Get the current timestamp in seconds
     timestamp = str(time()).split('.')[0]
 
-    return sum_all_digits([int(digit) for digit in timestamp])
+    return sum_all_digits(timestamp)
