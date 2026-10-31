@@ -4,14 +4,8 @@ def sum_all_digits(numbers):
     total = 0
 
     for n in numbers:
-        if n > 9:
-            # Split the number into its individual digits
-            parts = list(str(n))
-
-            # Parse each digit back to an integer and sum them up
-            total += sum_all_digits([int(p) for p in parts])
-        else:
-            total += n
+        for pns in str(n):
+            total += int(pns)
 
     return total
 
