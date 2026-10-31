@@ -1,14 +1,24 @@
 from time import time
 
-def sum_all_digits(numbers):
-    total = 0
-
+def format_and_validate_input(numbers):
     # Ensure that the input is converted to a string
-    formatted = "".join(str(n) for n in numbers)
+    formatted = (
+        "".join(str(n) for n in numbers)
+        if isinstance(numbers, (list, tuple, set))
+        else str(numbers)
+    )
 
     # Validate that the input contains only numeric digits
     if not formatted.isdigit():
         raise ValueError("Input contains non-numeric characters")
+
+    return formatted
+
+def sum_all_digits(numbers):
+    total = 0
+
+    # Format and validate the input numbers
+    formatted = format_and_validate_input(numbers)
 
     # Decomposes the numbers into their individual digits
     for pns in formatted:
@@ -24,9 +34,15 @@ def sum_timestamp_digits():
     return sum_all_digits(timestamp)
 
 def lookup_for_digit(digit, numbers):
+    # Format and validate the input numbers
+    formatted = format_and_validate_input(numbers)
+
     # Check if the digit is present in the numbers
-    return str(digit) in str(numbers)
+    return str(digit) in str(formatted)
 
 def count_digit_occurrences(digit, numbers):
+    # Format and validate the input numbers
+    formatted = format_and_validate_input(numbers)
+
     # Count the occurrences of the digit in the numbers
-    return str(numbers).count(str(digit))
+    return str(formatted).count(str(digit))
