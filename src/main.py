@@ -1,6 +1,6 @@
 import argparse
 
-from algorithms import forLoop
+from algorithms import basicMath
 
 parser = argparse.ArgumentParser()
 
@@ -17,7 +17,8 @@ if args.sum and args.count:
 
 if args.sum:
     # Sum all digits in the input
-    print(f"\033[34mSum of all digits: \033[33m{forLoop.sum_all_digits(args.digits)}\033[0m")
+    print(f"\033[34mSum of all digits: \033[33m{basicMath.sum_all_digits(args.digits)}\033[0m")
 elif args.count:
     # Count occurrences of the digit in the input
-    print(f"\033[34mOccurrences of digit {args.digits}: \033[33m{forLoop.count_digit_occurrences(args.count, args.digits)}\033[0m")
+    value = basicMath.count_digit_occurrences(args.count, args.digits)
+    print(f"\033[34mOccurrences of digit {args.digits}: \033[33m{value}\033[0m")

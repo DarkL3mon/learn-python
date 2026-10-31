@@ -17,17 +17,10 @@ def format_and_validate_input(numbers):
 
 def sum_all_digits(numbers):
     """Return the sum of all individual digits."""
-    total = 0
-
     # Format and validate the input numbers
     formatted = format_and_validate_input(numbers)
 
-    # Decomposes the numbers into their individual digits
-    for pns in formatted:
-        # Add each digit to the total sum
-        total += int(pns)
-
-    return total
+    return sum(int(digit) for digit in formatted)
 
 def sum_timestamp_digits():
     """Return the sum of digits in the current Unix timestamp."""
