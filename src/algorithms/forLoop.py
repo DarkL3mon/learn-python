@@ -23,10 +23,4 @@ def lookup_for_digit(digit, numbers):
     return False
 
 def count_digit_occurrences(digit, numbers):
-    count = 0
-
-    for n in str(numbers):
-        if str(digit) in str(n):
-            count += 1
-
-    return count
+    return str(numbers).count(str(digit))
