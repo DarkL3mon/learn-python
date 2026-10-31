@@ -14,3 +14,10 @@ def sum_timestamp_digits():
     timestamp = str(time()).split('.')[0]
 
     return sum_all_digits(timestamp)
+
+def lookup_for_digit(digit, numbers):
+    for n in str(numbers):
+        if str(digit) in str(n):
+            return True
+
+    return False
