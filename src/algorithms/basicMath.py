@@ -6,7 +6,7 @@ def format_and_validate_input(numbers):
     formatted = (
         "".join(str(n) for n in numbers)
         if isinstance(numbers, (list, tuple, set))
-        else str(numbers)
+        else str(numbers) # Numbers can still be a number
     )
 
     # Validate that the input contains only numeric digits
@@ -35,7 +35,7 @@ def lookup_for_digit(digit, numbers):
     formatted = format_and_validate_input(numbers)
 
     # Check if the digit is present in the numbers
-    return str(digit) in str(formatted)
+    return str(digit) in formatted
 
 def count_digit_occurrences(digit, numbers):
     """Count the occurrences of a digit in the input."""
@@ -43,4 +43,4 @@ def count_digit_occurrences(digit, numbers):
     formatted = format_and_validate_input(numbers)
 
     # Count the occurrences of the digit in the numbers
-    return str(formatted).count(str(digit))
+    return formatted.count(str(digit))
