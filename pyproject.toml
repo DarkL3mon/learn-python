@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61"]
+requires = ["setuptools>=61", "Cython>=3.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -9,7 +9,14 @@ description = "Python learning exercises"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
-py-modules = ["main"]
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[project.optional-dependencies]
+dev = [
+    "build",
+    "Cython",
+    "pytest",
+    "setuptools",
+]
